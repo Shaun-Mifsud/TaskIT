@@ -1,17 +1,181 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      New List
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content [fullscreen]="true">
+  <!--titles-->
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col>
+        <ion-text>List Details</ion-text>
+      </ion-col>
+
+      <ion-col>
+        <ion-text>Time & Date</ion-text>
+      </ion-col>
+
+      <ion-col>
+        <ion-text>Category</ion-text>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+  <ion-progress-bar value="0.5"></ion-progress-bar>
+
+  <!--input area-->
+  <ion-slides [options]="slideOpts">
+    <!--list details-->
+    <ion-slide>
+      <div class="inputArea">
+        <ion-item id="listName">
+          <ion-label position="floating">Enter List Name</ion-label>
+          <ion-input clearInput></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Enter Task Name</ion-label>
+          <ion-input clearInput></ion-input>
+        </ion-item>
+
+        <ion-item>
+          
+          <ion-label position="floating">
+            <ion-icon name="add-outline"></ion-icon>
+            Add Task
+          </ion-label>      
+          <ion-input clearInput></ion-input>
+        </ion-item>
+
+      </div>
+    </ion-slide>
+
+    <!--time & date-->
+    <ion-slide>    
+      <div class="inputArea">
+        <h2>Choose Date</h2>
+
+        <!--calendar-->
+        <div></div>
+
+        <!--drop down-->
+        <div>
+          <!--time-->
+          <ion-item id="startTime">
+            <ion-label>Start Time</ion-label>
+            <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
+          </ion-item>
+
+          <!--reminder-->
+          <ion-item>
+            <ion-label>Reminder</ion-label>
+            <ion-select value="notifications" interface="action-sheet">
+              <ion-select-option value="enable">30 minutes</ion-select-option>
+              <ion-select-option value="#">1 hour</ion-select-option>
+              <ion-select-option value="#">2 Hours</ion-select-option>
+              <ion-select-option value="#">5 Hours</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </div>
+      </div>
+    </ion-slide>
+
+    <!--Category-->
+    <ion-slide>    
+      <div class="inputArea">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-card id="home">
+                <ion-card-header>
+                  <ion-icon name="home"></ion-icon>
+                </ion-card-header>      
+                <ion-card-content>
+                  <ion-card-title>Home</ion-card-title>
+                  <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+            <ion-col>
+              <ion-card id="home">
+                <ion-card-header>
+                  <ion-icon name="home"></ion-icon>
+                </ion-card-header>      
+                <ion-card-content>
+                  <ion-card-title>Home</ion-card-title>
+                  <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-card id="home">
+                <ion-card-header>
+                  <ion-icon name="home"></ion-icon>
+                </ion-card-header>      
+                <ion-card-content>
+                  <ion-card-title>Home</ion-card-title>
+                  <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+            <ion-col>
+              <ion-card id="home">
+                <ion-card-header>
+                  <ion-icon name="home"></ion-icon>
+                </ion-card-header>      
+                <ion-card-content>
+                  <ion-card-title>Home</ion-card-title>
+                  <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-card id="home">
+                <ion-card-header>
+                  <ion-icon name="home"></ion-icon>
+                </ion-card-header>      
+                <ion-card-content>
+                  <ion-card-title>Home</ion-card-title>
+                  <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+            <ion-col>
+              <ion-card id="home">
+                <ion-card-header>
+                  <ion-icon name="home"></ion-icon>
+                </ion-card-header>      
+                <ion-card-content>
+                  <ion-card-title>Home</ion-card-title>
+                  <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-slide>
+  </ion-slides>  
 </ion-content>
+
+<ion-footer>  
+  <section class="full-width">
+    <ion-button expand="full" color="secondary">Next</ion-button>
+  </section>
+</ion-footer>

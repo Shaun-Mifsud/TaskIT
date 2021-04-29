@@ -1,21 +1,20 @@
 
 #categories{
 
-    ion-card{
-        padding: 0;
-        height: 20rem;
-    }
-
-    ion-button{
+    #home{
         height: 10rem;
-        padding: 0;
-            
-        ion-card{
-            padding: 0;
-            height:10rem;
-        }
     }
 
+    ion-card-content{
+        padding:.1rem 0 .1rem 0;
+    }
+
+    ion-card{
+        margin:1rem 0 1rem 0;
+        height: 12rem;
+    }
+
+    
     ion-card-title{
         font-size: 1.2rem;
     }  
@@ -25,8 +24,10 @@
         font-size: 2rem;
         background-color: red;
         border-radius: 1.5rem;
-    }
+    }    
+
 }
+
 
     
 

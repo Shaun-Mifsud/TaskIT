@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class Tab5Page implements OnInit {
 
   constructor() { }
-
+  selectTabs: string="Statistics";
   ngOnInit() {
   }
 

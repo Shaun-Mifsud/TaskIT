@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 export class Tab1Page {
 
     slideOpts = {
-    slidesPerView: 2,
+    slidesPerView: 3,
     coverflowEffect: {
       rotate: 50,
       stretch: 0,

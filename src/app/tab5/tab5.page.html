@@ -1,9 +1,105 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>tab5</ion-title>
+    <ion-title>
+      Profile
+    </ion-title>
+
+    <!--popover menu-->
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <!--user info-->
+  <div class="userInfo" align="center">
+    <ion-avatar>
+      <img src="./avatar-finn.png">
+    </ion-avatar>
 
+    <h3>(name)</h3>
+    <h5>(10/20 Tasks Completed Today)</h5>
+  </div>
+
+  <!--Segment-->
+  <ion-segment [(ngModel)]="selectTabs">
+    <ion-segment-button value="Statistics">
+      <ion-label>Statistics</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="Achievements">
+      <ion-label>Achievements</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!--Statistics-->
+  <div class="Statistics" *ngIf="selectTabs =='Statistics'">
+    <!--Gamification-->
+    <div id="gamificationBox"> 
+      <ion-card>
+        <ion-card-content>
+          
+          <!--top-->
+          <div>
+            <!--streak & task done-->
+            <div></div>      
+
+            <!--circle-->
+            <div></div>
+          </div>
+
+          <!--bottom-->
+          <div>
+            <!--day-->
+            <div></div>
+            <!--week-->
+            <div></div>
+            <!--month-->
+            <div></div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <div id=""></div>
+    </div>    
+  </div>
+
+  <!--Achievements-->
+  <div class="Achievements" *ngIf="selectTabs =='Achievements'">
+    <ion-list>
+      <ion-item>
+        <ion-grid>
+          <!--1 Achievement-->
+          <ion-row>
+            <ion-col size="2">
+              <ion-avatar>
+                <img src="./avatar-finn.png">
+              </ion-avatar>
+            </ion-col>
+
+            <ion-col size="10">
+              <h3>title</h3>
+              <ion-progress-bar value="0.5"></ion-progress-bar>
+                <ion-row>
+                <ion-col>
+                  <p>bla bla</p>
+                </ion-col>
+
+                <ion-col>
+                  <p>30xp</p>
+                </ion-col>
+              </ion-row>
+
+            </ion-col>
+          </ion-row>
+          
+        </ion-grid>
+      </ion-item>
+
+    </ion-list>
+  </div>
+  
 </ion-content>

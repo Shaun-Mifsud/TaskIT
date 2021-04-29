@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Task It
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h3 class="ion-text-center">Log in</h3>
+
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input clearInput></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input clearInput></ion-input>
+  </ion-item>
+  <ion-button id="forgotPass" fill="clear">forgot password</ion-button>
+
+  <ion-button id="logInButton" expand="block">Log In</ion-button>
+
+  <h6 class="ion-text-center">or</h6>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button expand="block">
+          <ion-icon name="logo-google"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

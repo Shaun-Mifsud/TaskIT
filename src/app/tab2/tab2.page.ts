@@ -7,6 +7,23 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+
+  //default segment showing
+  selectTabs: string="Daily";
+
+  slideOpts = {
+    slidesPerView: 3,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    }
+  }
+  
+  constructor() {
+
+  }
 
 }
