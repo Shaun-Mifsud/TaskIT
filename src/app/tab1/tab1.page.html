@@ -1,7 +1,7 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border" [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Welcome (user)
+      Welcome (user) (date)
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -11,25 +11,30 @@
   <div id="gamificationBox"> 
     <ion-card>
       <ion-card-content>
-        
-        <!--top-->
-        <div>
-          <!--streak & task done-->
-          <div></div>      
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-row>
+                <ion-col>
+                  <h5>Streak</h5>
+                  <h2>10 Days</h2>
+                </ion-col>
+              </ion-row>
+    
+              <ion-row>
+                <ion-col>
+                  task done
+                </ion-col>
+              </ion-row>
+            </ion-col>
 
-          <!--circle-->
-          <div></div>
-        </div>
-
-        <!--bottom-->
-        <div>
-          <!--day-->
-          <div></div>
-          <!--week-->
-          <div></div>
-          <!--month-->
-          <div></div>
-        </div>
+            <ion-col>
+              circle
+            </ion-col>
+          </ion-row>
+          
+        </ion-grid>  
+      
       </ion-card-content>
     </ion-card>
 
@@ -41,9 +46,22 @@
   <ion-card>
     <ion-card-content>
       <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+          <!--Today-->
+            <ion-card id="today">
+              <ion-card-header>
+                <ion-icon name="Today"></ion-icon>
+              </ion-card-header>
+    
+              <ion-card-content>
+                <ion-card-title>Today</ion-card-title>
+                <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+              </ion-card-content>
+            </ion-card>               
+          </ion-slide>
 
-      <ion-slide>
       <!--home-->
+      <ion-slide>      
         <ion-card id="home">
           <ion-card-header>
             <ion-icon name="home"></ion-icon>
@@ -54,63 +72,46 @@
             <ion-card-subtitle>5/10 completed</ion-card-subtitle>
           </ion-card-content>
         </ion-card>            
+      </ion-slide>      
 
-      </ion-slide>
-
-      <ion-slide>
-        <!--home-->
-          <ion-card id="home">
-            <ion-card-header>
-              <ion-icon name="home"></ion-icon>
-            </ion-card-header>
-  
-            <ion-card-content>
-              <ion-card-title>Home</ion-card-title>
-              <ion-card-subtitle>5/10 completed</ion-card-subtitle>
-            </ion-card-content>
-          </ion-card>            
-  
-        </ion-slide>
-
+      <!--Workout-->
         <ion-slide>
-          <!--home-->
-            <ion-card id="home">
+            <ion-card id="workout">
               <ion-card-header>
-                <ion-icon name="home"></ion-icon>
+                <ion-icon name="fitness"></ion-icon>
               </ion-card-header>
     
               <ion-card-content>
-                <ion-card-title>Home</ion-card-title>
+                <ion-card-title>Workout</ion-card-title>
                 <ion-card-subtitle>5/10 completed</ion-card-subtitle>
               </ion-card-content>
-            </ion-card>            
-    
+            </ion-card>          
           </ion-slide>
 
+          <!--work-->
           <ion-slide>
-            <!--home-->
-              <ion-card id="home">
+              <ion-card id="work">
                 <ion-card-header>
-                  <ion-icon name="home"></ion-icon>
+                  <ion-icon name="briefcase"></ion-icon>
                 </ion-card-header>
       
                 <ion-card-content>
-                  <ion-card-title>Home</ion-card-title>
+                  <ion-card-title>Work</ion-card-title>
                   <ion-card-subtitle>5/10 completed</ion-card-subtitle>
                 </ion-card-content>
               </ion-card>            
       
             </ion-slide>
 
+            <!--School-->
             <ion-slide>
-              <!--home-->
-                <ion-card id="home">
+                <ion-card id="school">
                   <ion-card-header>
-                    <ion-icon name="home"></ion-icon>
+                    <ion-icon name="School"></ion-icon>
                   </ion-card-header>
         
                   <ion-card-content>
-                    <ion-card-title>Home</ion-card-title>
+                    <ion-card-title>School</ion-card-title>
                     <ion-card-subtitle>5/10 completed</ion-card-subtitle>
                   </ion-card-content>
                 </ion-card>            

@@ -4,14 +4,14 @@
         margin: 0;
         height: 50px;
         text-align: center;
-        
-        
+                
         ion-card-content{
             padding: 0;
         }
 
             ion-card-title{
-                font-size: 10px;
+                padding-top: .4rem;
+                font-size: 20px;
             }
 
             ion-card-subtitle{
@@ -34,7 +34,8 @@
         }
 
             ion-card-title{
-                font-size: 10px;
+                padding-top: .7rem;
+                font-size: 25px;
             }
 
             ion-card-subtitle{
