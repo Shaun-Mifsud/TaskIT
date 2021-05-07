@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      New List
+      
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -30,11 +30,12 @@
   <!--input area-->
   <ion-slides [options]="slideOpts">
     <!--list details-->
+    
     <ion-slide>
       <div class="inputArea">
         <ion-item id="listName">
           <ion-label position="floating">Enter List Name</ion-label>
-          <ion-input clearInput></ion-input>
+          <ion-input clearInput [(ngModel)]="listName"></ion-input>
         </ion-item>
 
         <ion-item>
