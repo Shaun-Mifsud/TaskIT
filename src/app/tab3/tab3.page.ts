@@ -2,7 +2,7 @@ import { prepareSyntheticListenerName } from '@angular/compiler/src/render3/util
 import { Component } from '@angular/core';
 import { ListCreationService } from '../services/list-creation.service';
 import { StorageService } from '../services/storage.service';
-import {  List } from '../struct/list';
+import {  Category, Task } from '../struct/list';
 
 @Component({
   selector: 'app-tab3',
@@ -22,7 +22,13 @@ export class Tab3Page {
     }
   }
 
-  public name:string=null;
+  public item: Category = {
+    name: '',
+    tasks: []
+  };
+
+  selectedIndex: number = -1;
+
 
 
   constructor(
@@ -32,8 +38,17 @@ export class Tab3Page {
 
   async ngOnInit()
   {
-    //TO BE CHANGED
-    this.name = await this.storageService.get('listName');
+
+  }
+
+  addTask(): void
+  {
+    this.item.tasks.push({ name: '', complete: false });
+  }
+
+  chooseCategory(index: number)
+  {
+    this.selectedIndex = index;
   }
 
   onChange(key: string, e: any): void
@@ -41,5 +56,17 @@ export class Tab3Page {
     this.storageService.set(key, e.detail.value);
   }
 
+  async save()
+  {
+    // get all the user tasks from storage.
+    const list: Category[] = await this.storageService.get('list') || [];
+
+    // add the new task to the list we just obtained.
+    list.push(this.item);
+
+
+    // rewrite the list
+    this.storageService.set('list', list);
+  }
 
 }

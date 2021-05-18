@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { List } from '../struct/list';
+import { Category } from '../struct/list';
 import { StorageService } from './storage.service';
 
 @Injectable({
@@ -7,10 +7,20 @@ import { StorageService } from './storage.service';
 })
 export class ListCreationService {
 
-  public list :List[]=[];
+  public list: Category[]=[];
 
 
   constructor(
     private storageService: StorageService
   ) { }
+
+  async init()
+  {
+    this.list = await this.storageService.get('list') || [];
+  }
+
+  //func add
+  
+
+  //func delete
 }

@@ -1,4 +1,8 @@
+import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { Component } from '@angular/core';
+import { ListCreationService } from '../services/list-creation.service';
+import { StorageService } from '../services/storage.service';
+import {  Category, Task } from '../struct/list';
 
 @Component({
   selector: 'app-tab1',
@@ -18,8 +22,19 @@ export class Tab1Page {
       modifier: 1,
       slideShadows: true,
     }
+
+
   }
+  
+  public list: Category = {
+    name: '',
+    tasks: []
+  };
 
+  
   constructor() {}
-
+  //to be changed
+  name: string= this.list.name;
+  
 }
+

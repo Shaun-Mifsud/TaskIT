@@ -1,15 +1,21 @@
 import { IonDatetime } from "@ionic/angular";
 
-export interface List
+export interface Category
 {
-    listName: string;
+    name: string;
 
     // to be changed to array
-    tasks: string;
+    tasks: Task[];
 
-    startTime: IonDatetime;       
+    // (new Date()).getTime(); -> saving
+    // new Date(list.startTime); -> loading
 
-    reminder:number;
+}
 
-    category:string;
+export interface Task
+{
+    name: string;
+    complete: boolean;
+    startTime?: number;       
+    reminder?:number;
 }
