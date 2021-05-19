@@ -8,29 +8,51 @@
 
 
 <ion-content [fullscreen]="true">
-  <!--titles-->
+  <!--segment-->
+  <ion-segment [(ngModel)]="slideNumber" (ionChange)="changeSlide($event)">
+    <ion-segment-button value="0">
+      <ion-label>List Details</ion-label>
+    </ion-segment-button>
+
+    <ion-segment-button value="1">
+      <ion-label>List Details</ion-label>
+    </ion-segment-button>
+    
+    <ion-segment-button value="2">
+      <ion-label>List Details</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
   <ion-grid class="ion-text-center">
-    <ion-row>
-      <ion-col>
-        <ion-text>List Details</ion-text>
-      </ion-col>
-
-      <ion-col>
-        <ion-text>Time & Date</ion-text>
-      </ion-col>
-
-      <ion-col>
-        <ion-text>Category</ion-text>
-      </ion-col>
-    </ion-row>
-
   </ion-grid>
   <ion-progress-bar value="0.5"></ion-progress-bar>
 
   <!--input area-->
-  <ion-slides [options]="slideOpts">
-    <!--list details-->
-    
+  <ion-slides [options]="slideOpts" #slides>
+    <!--Category-->
+    <ion-slide>    
+      <div class="inputArea">
+        <ion-radio-group value="#">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="6" *ngFor="let category of categories; let i = index">
+                <ion-card value="home" id="home" (click)="chooseCategory(i)">
+                  <ion-card-header>
+                    <ion-icon name="home"></ion-icon>
+                  </ion-card-header>      
+                  <ion-card-content>
+                    <ion-card-title>Home</ion-card-title>
+                    <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-radio-group>
+      </div>
+    </ion-slide>
+
+    <!--list details-->    
     <ion-slide>
       <div class="inputArea">
         <ion-item id="listName">
@@ -81,95 +103,7 @@
       </div>
     </ion-slide>
 
-    <!--Category-->
-    <ion-slide>    
-      <div class="inputArea">
-        <ion-radio-group value="#">
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                <ion-card value="home" id="home">
-                  <ion-card-header>
-                    <ion-icon name="home"></ion-icon>
-                  </ion-card-header>      
-                  <ion-card-content>
-                    <ion-card-title>Home</ion-card-title>
-                    <ion-card-subtitle>5/10 completed</ion-card-subtitle>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
 
-              <ion-col>
-                <ion-card value="school" id="home">
-                  <ion-card-header>
-                    <ion-icon name="home"></ion-icon>
-                  </ion-card-header>      
-                  <ion-card-content>
-                    <ion-card-title>Home</ion-card-title>
-                    <ion-card-subtitle>5/10 completed</ion-card-subtitle>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-
-            </ion-row>
-
-            <ion-row>
-              <ion-col>
-                <ion-card id="home">
-                  <ion-card-header>
-                    <ion-icon name="home"></ion-icon>
-                  </ion-card-header>      
-                  <ion-card-content>
-                    <ion-card-title>Home</ion-card-title>
-                    <ion-card-subtitle>5/10 completed</ion-card-subtitle>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-
-              <ion-col>
-                <ion-card id="home">
-                  <ion-card-header>
-                    <ion-icon name="home"></ion-icon>
-                  </ion-card-header>      
-                  <ion-card-content>
-                    <ion-card-title>Home</ion-card-title>
-                    <ion-card-subtitle>5/10 completed</ion-card-subtitle>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-
-            </ion-row>
-
-            <ion-row>
-              <ion-col>
-                <ion-card id="home">
-                  <ion-card-header>
-                    <ion-icon name="home"></ion-icon>
-                  </ion-card-header>      
-                  <ion-card-content>
-                    <ion-card-title>Home</ion-card-title>
-                    <ion-card-subtitle>5/10 completed</ion-card-subtitle>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-
-              <ion-col>
-                <ion-card id="home">
-                  <ion-card-header>
-                    <ion-icon name="home"></ion-icon>
-                  </ion-card-header>      
-                  <ion-card-content>
-                    <ion-card-title>Home</ion-card-title>
-                    <ion-card-subtitle>5/10 completed</ion-card-subtitle>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>
-
-            </ion-row>
-          </ion-grid>
-        </ion-radio-group>
-      </div>
-    </ion-slide>
   </ion-slides>  
 </ion-content>
 

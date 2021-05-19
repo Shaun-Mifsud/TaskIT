@@ -3,15 +3,13 @@ import { IonDatetime } from "@ionic/angular";
 export interface Category
 {
     name: string;
-
-    // to be changed to array
+    icon?:string;
     tasks: Task[];
-
-    // (new Date()).getTime(); -> saving
-    // new Date(list.startTime); -> loading
 
 }
 
+// (new Date()).getTime(); -> saving
+// new Date(list.startTime); -> loading
 export interface Task
 {
     name: string;
