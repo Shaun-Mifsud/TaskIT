@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CATEGORY } from '../struct/categories-data';
-import { Category } from '../struct/list';
+import { Category, Task } from '../struct/list';
 import { StorageService } from './storage.service';
 
 @Injectable({
@@ -8,7 +8,9 @@ import { StorageService } from './storage.service';
 })
 export class TaskService {
 
-  public list: Category[] = [];
+  public list: Category[] = [];  
+
+  public CheckCheckmark:boolean= false;
 
 
   constructor(
@@ -20,8 +22,20 @@ export class TaskService {
     this.list = await this.storageService.get('list') || CATEGORY;
   }
 
-  //func add
-  
+  //index: category
+  //task : current task input
+  async save(index: number, task: Task)
+  {
+    //add the new task to the list we just obtained.
+    this.list[index].tasks.push(task);
+    //rewrite the list
+    this.writeToStorage();
+  }
 
-  //func delete
+
+  private writeToStorage()
+  {
+    this.storageService.set('list', this.list);
+  }
 }
+

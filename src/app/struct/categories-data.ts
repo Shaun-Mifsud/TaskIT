@@ -15,8 +15,20 @@ export const CATEGORY: Category[] = [
     },
 
     {
-        name: "school",
-        icon: "school",
+        name: "workout",
+        icon: "fitness",
+        tasks: []
+    },
+
+    {
+        name: "work",
+        icon: "briefcase",
+        tasks: []
+    },
+
+    {
+        name: "Shopping",
+        icon: "briefcase",
         tasks: []
     }
 ]

@@ -5,7 +5,6 @@ export interface Category
     name: string;
     icon?:string;
     tasks: Task[];
-
 }
 
 // (new Date()).getTime(); -> saving

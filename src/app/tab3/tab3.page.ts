@@ -28,7 +28,9 @@ export class Tab3Page {
   public item: Task = { name: '', complete: false };
   public categories: Category[] = [];
 
+  //cateogry ID
   selectedIndex: number = -1;
+
   slideNumber: number = 0;
 
 
@@ -42,23 +44,19 @@ export class Tab3Page {
     this.categories = this.taskService.list;
   }
 
-  addTask(): void
-  {
-    // this.item.tasks.push({ name: '', complete: false });
-  }
-
   chooseCategory(index: number)
   {
     this.selectedIndex = index;
+    this.slideNumber = 1;
+
+    this.slides.slideTo(1);
     console.log(this.selectedIndex);
-    
   }
 
   changeSlide(e)
   {
-    const value = e.detail.value;
-    this.slides.slideTo(value);
-    
+    const categoryIndex = e.detail.value;
+    this.slides.slideTo(categoryIndex);    
   }
 
   onChange(key: string, e: any): void
@@ -68,15 +66,11 @@ export class Tab3Page {
 
   async save()
   {
-    // get all the user tasks from storage.
-    // const list: Category[] = await this.storageService.get('list') || [];
-
-    // add the new task to the list we just obtained.
-    // list.push(this.item);
-
-
-    // rewrite the list
-    // this.storageService.set('list', list);
+    this.taskService.save(this.selectedIndex,this.item);
+    this.item = { name: '', complete: false }; // blank out the item if not redirecting to another page
   }
+
+
+  
 
 }

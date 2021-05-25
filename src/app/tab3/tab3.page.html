@@ -38,10 +38,10 @@
               <ion-col size="6" *ngFor="let category of categories; let i = index">
                 <ion-card value="home" id="home" (click)="chooseCategory(i)">
                   <ion-card-header>
-                    <ion-icon name="home"></ion-icon>
+                    <ion-icon name="{{category.icon}}"></ion-icon>
                   </ion-card-header>      
                   <ion-card-content>
-                    <ion-card-title>Home</ion-card-title>
+                    <ion-card-title>{{category.name}}</ion-card-title>
                     <ion-card-subtitle>5/10 completed</ion-card-subtitle>
                   </ion-card-content>
                 </ion-card>
@@ -56,18 +56,8 @@
     <ion-slide>
       <div class="inputArea">
         <ion-item id="listName">
-          <ion-label position="floating">Enter List Name</ion-label>
-          <ion-input clearInput [(ngModel)]="item.name"></ion-input>
-        </ion-item>
-
-        <ion-item *ngFor="let task of item.tasks">
           <ion-label position="floating">Enter Task Name</ion-label>
-          <ion-input clearInput [(ngModel)]="task.name"></ion-input>
-        </ion-item>
-
-        <ion-item (click)="addTask()">
-            <ion-icon name="add-outline" slot="start"></ion-icon>
-            Enter Task Name
+          <ion-input clearInput [(ngModel)]="item.name"></ion-input>
         </ion-item>
 
       </div>
