@@ -9,7 +9,7 @@
 
 <ion-content [fullscreen]="true">
   <!--segment-->
-  <ion-segment [(ngModel)]="slideNumber" (ionChange)="changeSlide($event)">
+  <ion-segment [(ngModel)]="slideNumber">
     <ion-segment-button value="0">
       <ion-label>Category</ion-label>
     </ion-segment-button>
@@ -28,7 +28,7 @@
   <ion-progress-bar value="0.5"></ion-progress-bar>
 
   <!--input area-->
-  <ion-slides [options]="slideOpts" #slides>
+  <ion-slides  #slides >
     <!--Category-->
     <ion-slide>    
       <div class="inputArea">
@@ -64,6 +64,11 @@
           <ion-input clearInput [(ngModel)]="item.name"></ion-input>
         </ion-item>
 
+        <section class="full-width">
+          <ion-button (click)="changeSlide(0)" expand="full" color="secondary">Back</ion-button>
+          <ion-button (click)="changeSlide(2)" expand="full" color="secondary">Next</ion-button>
+        </section>
+
       </div>
     </ion-slide>
 
@@ -98,7 +103,12 @@
               <ion-select-option value="2">2 Hours</ion-select-option>
               <ion-select-option value="5">5 Hours</ion-select-option>
             </ion-select>
-          </ion-item>          
+          </ion-item>       
+          
+          <section class="full-width">
+            <ion-button (click)="changeSlide(1)" expand="full" color="secondary">Back</ion-button>
+            <ion-button (click)="save()" expand="full" color="secondary">Save</ion-button>
+          </section>
         </div>
       </div>
     </ion-slide>
@@ -107,8 +117,3 @@
   </ion-slides>  
 </ion-content>
 
-<ion-footer>  
-  <section class="full-width">
-    <ion-button expand="full" color="secondary" (click)="save()">Next</ion-button>
-  </section>
-</ion-footer>

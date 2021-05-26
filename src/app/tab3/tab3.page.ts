@@ -11,7 +11,7 @@ import {  Category, Task } from '../struct/list';
 })
 export class Tab3Page {
 
-  @ViewChild('slides') slides: IonSlides;
+  @ViewChild('slides') ionSlides: IonSlides;
 
       slideOpts = {
         allowTouchMove: false,
@@ -33,7 +33,6 @@ export class Tab3Page {
 
   slideNumber: number = 0;
 
-
   constructor(
     private storageService: StorageService,
     public taskService: TaskService
@@ -49,15 +48,27 @@ export class Tab3Page {
     this.selectedIndex = index;
     this.slideNumber = 1;
 
-    this.slides.slideTo(1);
+    this.ionSlides.slideTo(1);
     console.log(this.selectedIndex);
   }
 
-  changeSlide(e)
+  changeSlide(slideNumber)
   {
-    const categoryIndex = e.detail.value;
-    this.slides.slideTo(categoryIndex);    
-  } 
+    if(slideNumber ==0){
+      this.ionSlides.slideTo(0);  
+      this.slideNumber = 0;
+    }
+
+    if(slideNumber ==1){
+      this.ionSlides.slideTo(1);  
+      this.slideNumber = 1;
+    }
+
+    if(slideNumber ==2){
+      this.ionSlides.slideTo(2);  
+      this.slideNumber = 2;
+    }
+  }  
 
   onChange(key: string, e: any): void
   {
@@ -68,9 +79,9 @@ export class Tab3Page {
   {
     this.taskService.save(this.selectedIndex,this.item,this.item.endTime,this.item.reminder,this.item.endDate);
     this.item = { name: '', complete: false }; // blank out the item if not redirecting to another page
+    
+    this.ionSlides.slideTo(0);  
+    this.slideNumber = 0;
   }
-
-
-  
 
 }
