@@ -24,7 +24,7 @@ export class TaskService {
 
   //index: category
   //task : current task input
-  async save(index: number, task: Task)
+  async save(index: number, task: Task, endTime:number, reminder:number,endDate:number)
   {
     //add the new task to the list we just obtained.
     this.list[index].tasks.push(task);
@@ -33,7 +33,7 @@ export class TaskService {
   }
 
 
-  private writeToStorage()
+  public writeToStorage()
   {
     this.storageService.set('list', this.list);
   }

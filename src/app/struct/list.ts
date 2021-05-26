@@ -13,6 +13,7 @@ export interface Task
 {
     name: string;
     complete: boolean;
-    startTime?: number;       
+    endTime?: number;       
     reminder?:number;
+    endDate?:number;
 }

@@ -57,7 +57,7 @@ export class Tab3Page {
   {
     const categoryIndex = e.detail.value;
     this.slides.slideTo(categoryIndex);    
-  }
+  } 
 
   onChange(key: string, e: any): void
   {
@@ -66,7 +66,7 @@ export class Tab3Page {
 
   async save()
   {
-    this.taskService.save(this.selectedIndex,this.item);
+    this.taskService.save(this.selectedIndex,this.item,this.item.endTime,this.item.reminder,this.item.endDate);
     this.item = { name: '', complete: false }; // blank out the item if not redirecting to another page
   }
 

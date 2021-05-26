@@ -15,7 +15,7 @@ import {  Category, Task } from '../struct/list';
 export class Tab1Page {
 
     slideOpts = {
-    slidesPerView: 3,
+    slidesPerView: 2.5,
     coverflowEffect: {
       rotate: 50,
       stretch: 0,
@@ -23,8 +23,6 @@ export class Tab1Page {
       modifier: 1,
       slideShadows: true,
     }
-
-
   }
 
   public item: Task = { name: '', complete: false };
@@ -60,19 +58,11 @@ export class Tab1Page {
     console.log(this.currentTasks);  
   } 
 
-  updateCheckbox()
+  updateCheckbox(task:Task)
   {
-    //this.CheckCheckmark = this.list[categoryIndex].tasks[taskIndex].complete.valueOf();
-    console.log("updateCheckbox TEST");
-
-    //if(){
-      //mark as checked
-    //}
-
-    //else{
-      //mark as not checked
-    //}
-
+    this.taskService.writeToStorage();
+    
+    
     //this.list[categoryIndex].tasks.push(updateItem);
     //rewrite the list
     //this.writeToStorage();
