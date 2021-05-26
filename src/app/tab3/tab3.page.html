@@ -77,21 +77,18 @@
       <div class="inputArea">
         <h2>Choose Date & Time</h2>
 
-        <!--calendar-->
-        <div></div>
-
         <!--drop down-->
         <div>
-          <!--time-->
-          <ion-item id="startTime">
-            <ion-label>End Time</ion-label>
-            <ion-datetime [(ngModel)]="item.endTime" display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
-          </ion-item>
-
           <!--end date-->
           <ion-item>
             <ion-label>End Date</ion-label>
             <ion-datetime [(ngModel)]="item.endDate" value="1990-02-20" placeholder="Select Date"></ion-datetime>
+          </ion-item>
+
+          <!--time-->
+          <ion-item id="startTime">
+            <ion-label>End Time</ion-label>
+            <ion-datetime [(ngModel)]="item.endTime" display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
           </ion-item>
 
           <!--reminder-->
@@ -112,7 +109,6 @@
         </div>
       </div>
     </ion-slide>
-
 
   </ion-slides>  
 </ion-content>
