@@ -52,22 +52,10 @@ export class Tab3Page {
     console.log(this.selectedIndex);
   }
 
-  changeSlide(slideNumber)
+  changeSlide()
   {
-    if(slideNumber ==0){
-      this.ionSlides.slideTo(0);  
-      this.slideNumber = 0;
-    }
-
-    if(slideNumber ==1){
-      this.ionSlides.slideTo(1);  
-      this.slideNumber = 1;
-    }
-
-    if(slideNumber ==2){
-      this.ionSlides.slideTo(2);  
-      this.slideNumber = 2;
-    }
+    this.ionSlides.slideTo(0);  
+    this.slideNumber = 0;
   }  
 
   onChange(key: string, e: any): void

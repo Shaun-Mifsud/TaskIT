@@ -8,14 +8,26 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 
+// Calendar UI Module
+import { CalendarModule } from 'ion2-calendar';
+
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab2PageRoutingModule
+    Tab2PageRoutingModule,
+    RouterModule.forChild([
+      {
+        path: '',
+        component: Tab2Page
+      }
+    ]),
+    CalendarModule
   ],
   declarations: [Tab2Page]
 })
+
+
 export class Tab2PageModule {}

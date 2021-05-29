@@ -38,6 +38,10 @@ export class Tab2Page {
 
   categoryIndex:number = -1;
 
+  //calendar
+  date: string;
+  type: 'string';
+
   
   constructor(
     private storageService: StorageService,
@@ -63,13 +67,12 @@ export class Tab2Page {
   updateCheckbox(task:Task)
   {
     this.taskService.writeToStorage();
-    
-    
-    //this.list[categoryIndex].tasks.push(updateItem);
-    //rewrite the list
-    //this.writeToStorage();
   }
 
+  //calendar
+  onChange($event) {
+    console.log("test");
+    console.log($event);
+  }
   
-
 }

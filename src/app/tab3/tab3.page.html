@@ -8,7 +8,7 @@
 
 
 <ion-content [fullscreen]="true">
-  <!--segment-->
+  <!--segment
   <ion-segment [(ngModel)]="slideNumber">
     <ion-segment-button value="0">
       <ion-label>Category</ion-label>
@@ -26,12 +26,13 @@
   <ion-grid class="ion-text-center">
   </ion-grid>
   <ion-progress-bar value="0.5"></ion-progress-bar>
+  -->
 
   <!--input area-->
-  <ion-slides  #slides >
+  <ion-slides  #slides>
     <!--Category-->
-    <ion-slide>    
-      <div class="inputArea">
+    <ion-slide class="inputArea">    
+      <div>
         <h2>Choose Category</h2>
 
         <ion-radio-group value="#">
@@ -64,17 +65,6 @@
           <ion-input clearInput [(ngModel)]="item.name"></ion-input>
         </ion-item>
 
-        <section class="full-width">
-          <ion-button (click)="changeSlide(0)" expand="full" color="secondary">Back</ion-button>
-          <ion-button (click)="changeSlide(2)" expand="full" color="secondary">Next</ion-button>
-        </section>
-
-      </div>
-    </ion-slide>
-
-    <!--time & date-->
-    <ion-slide>    
-      <div class="inputArea">
         <h2>Choose Date & Time</h2>
 
         <!--drop down-->
@@ -100,13 +90,15 @@
               <ion-select-option value="2">2 Hours</ion-select-option>
               <ion-select-option value="5">5 Hours</ion-select-option>
             </ion-select>
-          </ion-item>       
-          
-          <section class="full-width">
-            <ion-button (click)="changeSlide(1)" expand="full" color="secondary">Back</ion-button>
-            <ion-button (click)="save()" expand="full" color="secondary">Save</ion-button>
-          </section>
+          </ion-item>      
         </div>
+
+          
+        <section class="full-width">
+          <ion-button (click)="changeSlide()" expand="full" color="secondary">Back</ion-button>
+          <ion-button (click)="save()" expand="full" color="secondary">Save</ion-button>
+        </section>
+
       </div>
     </ion-slide>
 

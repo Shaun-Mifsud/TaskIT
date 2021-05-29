@@ -85,20 +85,16 @@
           <!--categories-->
         <ion-slide *ngFor="let category of categories; let i = index">      
 
-          <ion-segment [(ngModel)]="selectTabs">
-            <ion-segment-button (click)="chooseCategory(i); getTasks(i)">
-              <ion-card id="home">
-                <ion-card-header>
-                  <ion-icon name="{{category.icon}}"></ion-icon>
-                </ion-card-header>
-
-                <ion-card-content>
-                  <ion-card-title>{{category.name}}</ion-card-title>
-                  <ion-card-subtitle>5/10 completed</ion-card-subtitle>
-                </ion-card-content>
-              </ion-card>            
-          </ion-segment-button>
-        </ion-segment>
+          <ion-card (click)="chooseCategory(i);" [ngClass]="{ 'active': i == categoryIndex }">
+            <ion-card-header>
+              <ion-icon name="Today"></ion-icon>
+            </ion-card-header>
+  
+            <ion-card-content>
+              <ion-card-title>{{ category.name }}</ion-card-title>
+              <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+            </ion-card-content>
+          </ion-card>
 
       </ion-slide>      
 

@@ -25,75 +25,15 @@
   <div id="weekButtons">
     <ion-grid>
       <ion-row>
-        <ion-col size="1.7">
+        <ion-col size="1.7" *ngFor="let number of [1,2,3,4,5,6,7]" >
         <!--Sunday-->
         <ion-card>
           <ion-card-content>
             <ion-card-title>S</ion-card-title>
-            <ion-card-subtitle>(3)</ion-card-subtitle>
+            <ion-card-subtitle>{{number}}</ion-card-subtitle>
           </ion-card-content>
         </ion-card> 
-      </ion-col>
-
-      <ion-col size="1.7">
-        <!--monday-->
-        <ion-card>
-          <ion-card-content>
-            <ion-card-title>S</ion-card-title>
-            <ion-card-subtitle>(3)</ion-card-subtitle>
-          </ion-card-content>
-        </ion-card> 
-      </ion-col>
-
-      <ion-col size="1.7">
-        <!--tuesday-->
-        <ion-card>
-          <ion-card-content>
-            <ion-card-title>S</ion-card-title>
-            <ion-card-subtitle>(3)</ion-card-subtitle>
-          </ion-card-content>
-        </ion-card> 
-      </ion-col>
-
-      <ion-col size="1.7">
-        <!--wednesday-->
-        <ion-card>
-          <ion-card-content>
-            <ion-card-title>S</ion-card-title>
-            <ion-card-subtitle>(3)</ion-card-subtitle>
-          </ion-card-content>
-        </ion-card> 
-      </ion-col>
-
-      <ion-col size="1.7">
-        <!--thursday-->
-        <ion-card>
-          <ion-card-content>
-            <ion-card-title>S</ion-card-title>
-            <ion-card-subtitle>(3)</ion-card-subtitle>
-          </ion-card-content>
-        </ion-card> 
-      </ion-col>
-
-      <ion-col size="1.7">
-        <!--friday-->
-        <ion-card>
-          <ion-card-content>
-            <ion-card-title>S</ion-card-title>
-            <ion-card-subtitle>(3)</ion-card-subtitle>
-          </ion-card-content>
-        </ion-card> 
-      </ion-col>
-
-      <ion-col size="1.7">
-        <!--Saturday-->
-        <ion-card>
-          <ion-card-content>
-            <ion-card-title>S</ion-card-title>
-            <ion-card-subtitle>(3)</ion-card-subtitle>
-          </ion-card-content>
-        </ion-card> 
-      </ion-col>
+      </ion-col>    
       
     </ion-row>
 
@@ -300,6 +240,11 @@
 
   <!--caldenar API-->
   <div class="calendar">
+      <ion-calendar [(ngModel)]="date"
+        (click)="onChange($event)"
+        [type]="type"
+        [format]="'YYYY-MM-DD'">
+    </ion-calendar>
   </div>
 
   <!--categories-->
