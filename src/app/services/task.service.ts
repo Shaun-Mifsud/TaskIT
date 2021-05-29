@@ -32,6 +32,13 @@ export class TaskService {
     this.writeToStorage();
   }
 
+  delete(categoryIndex,currentIndex:number)
+  {
+    this.list[categoryIndex].tasks.splice(currentIndex,1);
+    //rewrite the list
+    this.writeToStorage();
+  }
+
 
   public writeToStorage()
   {

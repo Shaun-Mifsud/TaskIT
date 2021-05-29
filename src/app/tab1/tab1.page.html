@@ -109,7 +109,7 @@
     <ion-card>
       <ion-card-content>
         <ion-list>
-          <ion-item-sliding *ngFor="let currentTask of currentTasks">         
+          <ion-item-sliding *ngFor="let currentTask of currentTasks; let currentIndex = index">         
             <ion-item>
               <ion-checkbox [(ngModel)]="currentTask.complete" (ionChange)="updateCheckbox(currentTask)"></ion-checkbox>
               <ion-label>{{currentTask.name}}</ion-label>
@@ -117,7 +117,7 @@
             </ion-item>
         
             <ion-item-options side="end">
-              <ion-item-option (click)="unread(item)">Delete</ion-item-option>
+              <ion-item-option (click)="delete(currentIndex)">Delete</ion-item-option>
             </ion-item-options>
           </ion-item-sliding>
         </ion-list>

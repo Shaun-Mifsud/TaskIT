@@ -51,10 +51,6 @@ export class Tab1Page {
     this.totalTasksComplete();
   }
 
-  ionViewWillLeave()
-  {
-  }
-
   chooseCategory(index:number){
     this.categoryIndex = index;
     this.getTasks(index);
@@ -89,6 +85,10 @@ export class Tab1Page {
       }  
     }
 
+  }
+
+  delete(currentIndex:number){
+    this.taskService.delete(this.categoryIndex,currentIndex);
   }
 }
 
