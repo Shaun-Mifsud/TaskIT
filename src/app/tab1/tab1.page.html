@@ -85,20 +85,19 @@
           <!--categories-->
         <ion-slide *ngFor="let category of categories; let i = index">      
 
-          <ion-card (click)="chooseCategory(i);" [ngClass]="{ 'active': i == categoryIndex }">
+          <ion-card (click)="chooseCategory(i); totalTasksComplete()" [ngClass]="{ 'active': i == categoryIndex }">
             <ion-card-header>
               <ion-icon name="Today"></ion-icon>
             </ion-card-header>
   
             <ion-card-content>
               <ion-card-title>{{ category.name }}</ion-card-title>
-              <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+              <ion-card-subtitle>{{totalComplete}} / {{currentTasks.length}} completed </ion-card-subtitle>
             </ion-card-content>
           </ion-card>
 
-      </ion-slide>      
-
-      </ion-slides>
+      </ion-slide>  
+    </ion-slides>
 
     </ion-card-content>
   </ion-card>

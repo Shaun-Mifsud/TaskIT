@@ -1,5 +1,6 @@
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 import { Component } from '@angular/core';
+import { relativeTimeThreshold } from 'moment';
 import { ListCreationService } from '../services/list-creation.service';
 import { StorageService } from '../services/storage.service';
 import { TaskService } from '../services/task.service';
@@ -36,6 +37,8 @@ export class Tab1Page {
 
   categoryIndex:number = -1;
 
+  totalComplete:number =0;
+
   
   constructor(
     private storageService: StorageService,
@@ -45,7 +48,11 @@ export class Tab1Page {
   async ngOnInit()
   {
     this.categories = this.taskService.list;
-    //console.log(this.categories);
+    this.totalTasksComplete();
+  }
+
+  ionViewWillLeave()
+  {
   }
 
   chooseCategory(index:number){
@@ -56,20 +63,32 @@ export class Tab1Page {
 
   getTasks(index:number){
     this.currentTasks = this.taskService.list[index].tasks;
-    console.log(this.currentTasks);  
+    //console.log(this.currentTasks);  
   } 
 
   updateCheckbox(task:Task)
   {
-    this.taskService.writeToStorage();
-    
+    this.taskService.writeToStorage();  
     
     //this.list[categoryIndex].tasks.push(updateItem);
     //rewrite the list
     //this.writeToStorage();
   }
 
-  
+  totalTasksComplete()
+  {
+    this.totalComplete=0;    
+    console.log(this.currentTasks);      
+    console.log("categories length "+this.categories.length); 
 
+    for (let i = 0; i < this.currentTasks.length; i++) {
+
+      if(this.currentTasks[i].complete== true)
+      {
+        this.totalComplete +=1;  
+      }  
+    }
+
+  }
 }
 
