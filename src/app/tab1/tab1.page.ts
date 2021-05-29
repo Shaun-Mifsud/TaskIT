@@ -5,6 +5,7 @@ import { ListCreationService } from '../services/list-creation.service';
 import { StorageService } from '../services/storage.service';
 import { TaskService } from '../services/task.service';
 import {  Category, Task } from '../struct/list';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -29,7 +30,8 @@ export class Tab1Page {
   public item: Task = { name: '', complete: false };
   public categories: Category[] = [];
   public currentTasks: Task[] = [];
-
+  public currentTask: Task[] = [];
+  
   //cateogry ID
   selectedIndex: number = -1;
 
@@ -62,6 +64,10 @@ export class Tab1Page {
     //console.log(this.currentTasks);  
   } 
 
+  getTask(currentTask:number){
+    this.currentTask = this.taskService.list[currentTask].tasks;
+  }
+
   updateCheckbox(task:Task)
   {
     this.taskService.writeToStorage();  
@@ -90,5 +96,6 @@ export class Tab1Page {
   delete(currentIndex:number){
     this.taskService.delete(this.categoryIndex,currentIndex);
   }
+
 }
 
