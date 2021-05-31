@@ -23,40 +23,19 @@
     <ion-card>
       <ion-card-content>
         <ion-slides pager="true" [options]="slideOpts">
-          <!--Today-->
-          <ion-slide>
-              <ion-card id="today">
-                <ion-card-header>
-                  <ion-icon name="Today"></ion-icon>
-                </ion-card-header>
-      
-                <ion-card-content>
-                  <ion-card-title>Today</ion-card-title>
-                  <ion-card-subtitle>5/10 completed</ion-card-subtitle>
-                </ion-card-content>
-              </ion-card>               
-            </ion-slide>
-
             <!--categories-->
           <ion-slide *ngFor="let category of categories; let i = index">      
+            <ion-card (click)="chooseCategory(i); getTasks(i)" id="home">
+              <ion-card-header>
+                <ion-icon name="{{category.icon}}"></ion-icon>
+              </ion-card-header>
 
-            <ion-segment [(ngModel)]="selectCategory">
-              <ion-segment-button (click)="chooseCategory(i); getTasks(i)">
-                <ion-card id="home">
-                  <ion-card-header>
-                    <ion-icon name="{{category.icon}}"></ion-icon>
-                  </ion-card-header>
-
-                  <ion-card-content>
-                    <ion-card-title>{{category.name}}</ion-card-title>
-                    <ion-card-subtitle>5/10 completed</ion-card-subtitle>
-                  </ion-card-content>
-                </ion-card>            
-            </ion-segment-button>
-          </ion-segment>
-
-        </ion-slide>      
-
+              <ion-card-content>
+                <ion-card-title>{{category.name}}</ion-card-title>
+                <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+              </ion-card-content>
+            </ion-card>       
+        </ion-slide>     
         </ion-slides>
 
       </ion-card-content>

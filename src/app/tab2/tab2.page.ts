@@ -61,9 +61,8 @@ export class Tab2Page {
     this.categoryIndex = index;
     //console.log(this.categories[this.categoryIndex]);
   }
-
-  getTasks(index:number){
-    this.currentTasks = this.taskService.list[index].tasks;  
+  getTasks(categoryIndex:number){
+    this.currentTasks = this.taskService.list[categoryIndex].tasks;  
     console.log(this.currentTasks);  
   } 
 
@@ -74,14 +73,9 @@ export class Tab2Page {
 
   //calendar
   onChange($event) {
-    let formattedDate = $event.format('DD-MMMM-YYYY');
-    const chosenDate = new Date($event.format('DD-MMMM-YYYY')).getTime();
-    
+    const chosenDate = new Date($event.format('DD-MMMM-YYYY')).getTime();    
     const list = this.taskService.getAllTasks(chosenDate);
-    console.log(list);
+    this.currentTasks=list;
+  }
 
-    console.log("onSelect event called");
-    console.log(formattedDate);  
-};
-  
 }

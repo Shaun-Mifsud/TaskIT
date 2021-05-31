@@ -24,11 +24,5 @@ export const CATEGORY: Category[] = [
         name: "work",
         icon: "briefcase",
         tasks: []
-    },
-
-    {
-        name: "Shopping",
-        icon: "briefcase",
-        tasks: []
     }
 ]

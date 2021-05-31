@@ -31,6 +31,19 @@
 
             <ion-col>
               circle
+                <svg
+                class="progress-ring"
+                width="120"
+                height="120">
+              <circle
+                class="progress-ring__circle"
+                stroke="white"
+                stroke-width="4"
+                fill="transparent"
+                r="52"
+                cx="60"
+                cy="60"/>
+            </svg>
             </ion-col>
           </ion-row>
 
@@ -64,13 +77,12 @@
   </div>
 
   <!--categories-->
-
   <ion-slides pager="true" [options]="slideOpts">
     <!--Today-->
     <ion-slide>
         <ion-card id="today">
           <ion-card-header>
-            <ion-icon name="Today"></ion-icon>
+            <ion-icon name=""></ion-icon>
           </ion-card-header>
 
           <ion-card-content>
@@ -83,7 +95,7 @@
       <!--categories-->
     <ion-slide id="eachCategory" *ngFor="let category of categories; let i = index">      
 
-      <ion-card (click)="chooseCategory(i); totalTasksComplete()" [ngClass]="{ 'active': i == categoryIndex }">
+      <ion-card (click)="chooseCategory(i); totalTasksComplete()" [ngClass]="{ 'focus': i == categoryIndex }">
         <ion-card-header>
           <ion-icon name="{{category.icon}}"></ion-icon>
         </ion-card-header>

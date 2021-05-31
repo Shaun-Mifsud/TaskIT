@@ -1,13 +1,37 @@
 
 ion-card-title { text-transform: capitalize; }
 
-#eachCategory{
-        ion-icon{
-            padding: 1rem;
-            font-size: 2rem;
-            border-radius: 1.5rem;
-        }  
+#eachCategory {
+    background-color: red;
+    ion-card{
+
+        ion-card-title{
+            font-size: 20px;
+        }
     }
+    ion-icon{
+        padding: 1rem;
+        font-size: 2rem;
+        border-radius: 1.5rem;
+        color: red;
+        background-color: red;
+    }
+
+    
+}
+
+#eachCategory :active {
+
+    background-color: #eb9a3a;
+    ion-icon{
+        padding: 1rem;
+        font-size: 2rem;
+        border-radius: 1.5rem;
+        color: #eb9a3a;
+        background-color: #F6C731;
+    }
+}
+
 
     #today{              
         background-color: #eb9a3a;
@@ -20,5 +44,6 @@ ion-card-title { text-transform: capitalize; }
         }
     }
 
-
-
+.progress-ring__circle{
+    stroke: blue;
+}
