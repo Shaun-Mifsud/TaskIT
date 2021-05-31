@@ -56,12 +56,10 @@ export class Tab1Page {
   chooseCategory(index:number){
     this.categoryIndex = index;
     this.getTasks(index);
-    //console.log(this.categories[this.categoryIndex]);
   }
 
   getTasks(index:number){
     this.currentTasks = this.taskService.list[index].tasks;
-    //console.log(this.currentTasks);  
   } 
 
   getTask(currentTask:number){

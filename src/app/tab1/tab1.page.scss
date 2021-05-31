@@ -1,38 +1,24 @@
 
-#categories{    
-    
-    ion-card{
-        background-color: red;
-        margin:1rem 0 1rem 0;
-        height: 12.3rem;
-    }
-    ion-icon{
-        padding: 1rem;
-        font-size: 2rem;
-        border-radius: 1.5rem;
-    }   
-    
-    ion-card-content{        
-        padding:.1rem 0 .1rem 0;
+ion-card-title { text-transform: capitalize; }
 
-        ion-card-title{
-            font-size: 1.2rem;
+#eachCategory{
+        ion-icon{
+            padding: 1rem;
+            font-size: 2rem;
+            border-radius: 1.5rem;
         }  
     }
 
-    #today,#home{      
-        height:10rem; 
+    #today{              
         background-color: #eb9a3a;
         ion-icon{
+            padding: 1rem;
+            font-size: 2rem;
+            border-radius: 1.5rem;
             color: #eb9a3a;
             background-color: #F6C731;
         }
     }
 
-}
-
-
-    
-ion-card-title { text-transform: capitalize; }
 
 

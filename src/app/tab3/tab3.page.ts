@@ -65,6 +65,10 @@ export class Tab3Page {
 
   async save()
   {
+    this.item.endDate = new Date(this.item.endDate).setHours(0, 0, 0, 0);
+    const date = new Date(this.item.endTime).setHours(0, 0, 0, 0);
+    this.item.endTime = new Date(this.item.endTime).setSeconds(0, 0) - date;
+
     this.taskService.save(this.selectedIndex,this.item,this.item.endTime,this.item.reminder,this.item.endDate);
     this.item = { name: '', complete: false }; // blank out the item if not redirecting to another page
     

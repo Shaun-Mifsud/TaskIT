@@ -47,6 +47,18 @@ export class TaskService {
     this.writeToStorage();
   }
 
+  getAllTasks(date?: number)
+  {
+    const list = this.list.map(l => l.tasks).reduce((accumulator, currentValue) => accumulator.concat(currentValue));
+    if (date != undefined) return list.filter(t => t.endDate == date);
+    return list;
+  }
+
+  getTaskByDate(categoryIndex: number, date: number)
+  {
+    return this.list[categoryIndex].tasks.filter(t => t.endDate == date);
+  }
+
 
   public writeToStorage()
   {

@@ -64,48 +64,43 @@
   </div>
 
   <!--categories-->
-<div id="categories">
-  <ion-card>
-    <ion-card-content>
-      <ion-slides pager="true" [options]="slideOpts">
-        <!--Today-->
-        <ion-slide>
-            <ion-card id="today">
-              <ion-card-header>
-                <ion-icon name="Today"></ion-icon>
-              </ion-card-header>
-    
-              <ion-card-content>
-                <ion-card-title>Today</ion-card-title>
-                <ion-card-subtitle>5/10 completed</ion-card-subtitle>
-              </ion-card-content>
-            </ion-card>               
-          </ion-slide>
 
-          <!--categories-->
-        <ion-slide *ngFor="let category of categories; let i = index">      
+  <ion-slides pager="true" [options]="slideOpts">
+    <!--Today-->
+    <ion-slide>
+        <ion-card id="today">
+          <ion-card-header>
+            <ion-icon name="Today"></ion-icon>
+          </ion-card-header>
 
-          <ion-card (click)="chooseCategory(i); totalTasksComplete()" [ngClass]="{ 'active': i == categoryIndex }">
-            <ion-card-header>
-              <ion-icon name="Today"></ion-icon>
-            </ion-card-header>
-  
-            <ion-card-content>
-              <ion-card-title>{{ category.name }}</ion-card-title>
-              <ion-card-subtitle>{{totalComplete}} / {{currentTasks.length}} completed </ion-card-subtitle>
-            </ion-card-content>
-          </ion-card>
+          <ion-card-content>
+            <ion-card-title>Today</ion-card-title>
+            <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+          </ion-card-content>
+        </ion-card>               
+      </ion-slide>
 
-      </ion-slide>  
-    </ion-slides>
+      <!--categories-->
+    <ion-slide id="eachCategory" *ngFor="let category of categories; let i = index">      
 
-    </ion-card-content>
-  </ion-card>
-</div>
+      <ion-card (click)="chooseCategory(i); totalTasksComplete()" [ngClass]="{ 'active': i == categoryIndex }">
+        <ion-card-header>
+          <ion-icon name="{{category.icon}}"></ion-icon>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-card-title>{{category.name}}</ion-card-title>
+          <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+        </ion-card-content>
+      </ion-card>
+
+  </ion-slide>  
+</ion-slides>
+
 
   <!--Task List-->
   <!--School-->
-  <div  id="taskList">
+  <div id="taskList">
     <ion-card>
       <ion-card-content>
         <ion-list>
@@ -116,10 +111,6 @@
               <h4>{{currentTask.endDate | date:'dd MMM YYYY, HH:mm' }}</h4>
             </ion-item>
         
-            <ion-item-options side="start">
-              <ion-item-option routerLink="/edit-task" (click)="getTask(currentIndex)">Edit</ion-item-option>
-            </ion-item-options>
-
             <ion-item-options side="end">
               <ion-item-option (click)="delete(currentIndex)">Delete</ion-item-option>
             </ion-item-options>
@@ -129,6 +120,5 @@
       </ion-card-content>
     </ion-card>
   </div>
-
 
 </ion-content>

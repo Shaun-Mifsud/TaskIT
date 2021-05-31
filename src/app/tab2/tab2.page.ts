@@ -1,20 +1,23 @@
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
 import { ListCreationService } from '../services/list-creation.service';
 import { StorageService } from '../services/storage.service';
 import { TaskService } from '../services/task.service';
 import {  Category, Task } from '../struct/list';
+import { CalendarModule } from 'ion2-calendar';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
+
 export class Tab2Page {
-
-
-  //default segment showing
-  selectTabs: string="Daily";
+; 
+  
+  moment: any = moment;
 
   slideOpts = {
     slidesPerView: 3,
@@ -49,7 +52,7 @@ export class Tab2Page {
   ) {}
 
   async ngOnInit()
-  {
+  {    
     this.categories = this.taskService.list;
     //console.log(this.categories);
   }
@@ -71,8 +74,14 @@ export class Tab2Page {
 
   //calendar
   onChange($event) {
-    console.log("test");
-    console.log($event);
-  }
+    let formattedDate = $event.format('DD-MMMM-YYYY');
+    const chosenDate = new Date($event.format('DD-MMMM-YYYY')).getTime();
+    
+    const list = this.taskService.getAllTasks(chosenDate);
+    console.log(list);
+
+    console.log("onSelect event called");
+    console.log(formattedDate);  
+};
   
 }
