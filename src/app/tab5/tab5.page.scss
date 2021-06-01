@@ -10,3 +10,59 @@ ion-segment{
         width: 100px;
     }
 }
+
+#space{
+    margin-top:9px;
+}
+
+ion-card-title { text-transform: capitalize; }
+
+ion-list{
+    ion-card{
+        margin:14px 10px 0px 10px;
+    }
+}
+
+
+ion-title {
+    height: 35px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    background-color: #EEF2F5 ;
+}
+
+ion-toolbar{
+    --border-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #EEF2F5;
+}
+
+ion-content{
+    --ion-background-color:#EEF2F5;
+}
+
+ion-card{
+    background-color: white;
+}
+
+#gamificationBox{
+    margin-bottom: -30px;
+    ion-col{
+        color: black;
+        ion-icon{
+            color:#189BE6 ;
+            font-size: 45px;
+        }
+    }
+}
+
+.progress-ring__circle{
+    stroke: #189BE6;
+}
+
+h2{
+    font-weight: bold;
+}

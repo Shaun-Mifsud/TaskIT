@@ -1,4 +1,7 @@
-<ion-header [translucent]="true">
+
+
+<ion-content>
+
   <ion-toolbar>
     <ion-title>
       Profile
@@ -11,17 +14,15 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
 
-<ion-content>
   <!--user info-->
   <div class="userInfo" align="center">
     <ion-avatar>
-      <img src="./avatar-finn.png">
+      <img src="/assets/images/profile.jpg">
     </ion-avatar>
 
-    <h3>(name)</h3>
-    <h5>(10/20 Tasks Completed Today)</h5>
+    <h3>Twanny Tad doughnuts</h3>
+    <h5>10/20 Tasks Completed Today</h5>
   </div>
 
   <!--Segment-->
@@ -37,69 +38,122 @@
 
   <!--Statistics-->
   <div class="Statistics" *ngIf="selectTabs =='Statistics'">
-    <!--Gamification-->
-    <div id="gamificationBox"> 
-      <ion-card>
-        <ion-card-content>
-          
-          <!--top-->
-          <div>
-            <!--streak & task done-->
-            <div></div>      
-
-            <!--circle-->
-            <div></div>
-          </div>
-
-          <!--bottom-->
-          <div>
-            <!--day-->
-            <div></div>
-            <!--week-->
-            <div></div>
-            <!--month-->
-            <div></div>
-          </div>
-        </ion-card-content>
-      </ion-card>
-
-      <div id=""></div>
-    </div>    
-  </div>
-
-  <!--Achievements-->
-  <div class="Achievements" *ngIf="selectTabs =='Achievements'">
-    <ion-list>
-      <ion-item>
+  <!--Gamification-->
+  <div id="gamificationBox"> 
+    <ion-card>
+      <ion-card-content>
         <ion-grid>
-          <!--1 Achievement-->
           <ion-row>
-            <ion-col size="2">
-              <ion-avatar>
-                <img src="./avatar-finn.png">
-              </ion-avatar>
-            </ion-col>
-
-            <ion-col size="10">
-              <h3>title</h3>
-              <ion-progress-bar value="0.5"></ion-progress-bar>
-                <ion-row>
-                <ion-col>
-                  <p>bla bla</p>
+            <ion-col>
+              <!--Streak-->
+              <ion-row>
+                <ion-col size="5">
+                  <ion-icon name="calendar-outline"></ion-icon>
                 </ion-col>
-
-                <ion-col>
-                  <p>30xp</p>
+                <ion-col size="7">
+                  <ion-row>Streak</ion-row>
+                  <ion-row>10 Days</ion-row>
                 </ion-col>
               </ion-row>
 
+              <!--Tasks-->
+              <ion-row>
+                <ion-col size="5">
+                  <ion-icon name="checkbox-outline"></ion-icon>
+                </ion-col>
+
+                <ion-col size="7">
+                  <ion-row>Done</ion-row>
+                  <ion-row>6</ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+
+
+            <!--circle-->
+            <ion-col>
+                <svg
+                class="progress-ring"
+                width="120"
+                height="120">
+              <circle
+                class="progress-ring__circle"
+                stroke="white"
+                stroke-width="4"
+                fill="transparent"
+                r="52"
+                cx="60"
+                cy="60"/>
+            </svg>
             </ion-col>
           </ion-row>
-          
-        </ion-grid>
-      </ion-item>
 
-    </ion-list>
+          <ion-row>
+            <ion-col>
+              <h5 style="font-size:17px">Day</h5>
+              <ion-progress-bar value="0.3"></ion-progress-bar>
+              <h5>2 Done</h5>
+            </ion-col>
+
+            <ion-col>
+              <h5 style="font-size:17px">Week</h5>
+              <ion-progress-bar value="0.5"></ion-progress-bar>
+              <h5>4 Done</h5>
+            </ion-col>
+
+            <ion-col>
+              <h5 style="font-size:17px">Month</h5>
+              <ion-progress-bar value="0.7"></ion-progress-bar>
+              <h5>6 Done</h5>
+            </ion-col>
+
+          </ion-row>
+          
+        </ion-grid>  
+      
+      </ion-card-content>
+    </ion-card>
+
+  </div>  
+  </div>
+
+  <div id="space"></div>
+  <!--Achievements-->
+  <div class="Achievements" *ngIf="selectTabs =='Achievements'">
+
+    <ion-grid>
+        <ion-list *ngFor="let number of [0,1,2,3,4]">
+              <ion-card>
+                <ion-card-content>
+              <!--1 Achievement-->
+              <ion-row>
+                <ion-col size="2">
+                    <img src="/assets/images/trophy.svg">
+                </ion-col>
+
+                <ion-col size="10">
+                  <h2>Complete 10 Tasks</h2>
+                  <ion-progress-bar value="0.6"></ion-progress-bar>
+                    <ion-row>
+                    <ion-col>
+                      <p>Complete 4 more tasks</p>
+                    </ion-col>
+
+                    <ion-col>
+                      <p>30xp</p>
+                    </ion-col>
+                  </ion-row>
+
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
+          </ion-card>
+      </ion-list>
+    </ion-grid>
+
   </div>
   
 </ion-content>
+
+
+

@@ -1,4 +1,6 @@
 
+@import '~material-icons/iconfont/material-icons.css';
+
 ion-card-title { text-transform: capitalize; }
 
 ion-title{
@@ -16,11 +18,20 @@ ion-content{
 
 ion-card{
     background-color: white;
+    margin-top: 58px;
+    margin-right: 16px;
+    margin-left: 16px;
 }
 
-.calendar{
-    margin-top: 58px;
-
+.calendar{  
+    
+    [_nghost-vgs-c134] .week-title[_ngcontent-vgs-c134] {
+        padding: 10px 0 10px 0 !important;
+    }
+    
+    ion-calendar{
+        padding: 10px 0 10px 0;
+    }
 }
 
 #gamificationBox{
@@ -41,6 +52,8 @@ ion-card{
 
 #eachCategory {
     ion-card{
+        margin-top: 0px;
+
         ion-card-title{
             font-size: 18px;
         }
@@ -86,6 +99,7 @@ ion-card{
 }
 
 #today{  
+    margin-top: 0px;
     background-color: #189BE6;
     ion-card-title{
         font-size: 18px;

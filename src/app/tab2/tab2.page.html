@@ -5,6 +5,7 @@
   </ion-title>
 
 <div >
+  <ion-card>
   <!--caldenar API-->
   <div class="calendar">
     <ion-calendar [(ngModel)]="date"
@@ -12,7 +13,8 @@
     [type]="type"
     [format]="'YYYY-MM-DD'">
   </ion-calendar>
-  </div>
+</div>
+</ion-card>
 
     <!--categories-->
   <ion-slides id="categories" pager="false" [options]="slideOpts">
