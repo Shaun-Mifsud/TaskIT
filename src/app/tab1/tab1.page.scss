@@ -1,49 +1,121 @@
 
 ion-card-title { text-transform: capitalize; }
 
-#eachCategory {
-    background-color: red;
-    ion-card{
+ion-title{
+    height: 35px;
+    width: 100%;
+    padding: 28px 0 0 0;
+    margin: 0;
+    font-size: 22px;
+}
 
-        ion-card-title{
-            font-size: 20px;
+
+ion-content{
+    --ion-background-color:#EEF2F5;
+}
+
+ion-card{
+    background-color: white;
+}
+
+#gamificationBox{
+    margin-bottom: -30px;
+    margin-top: 58px;
+    ion-col{
+        color: black;
+        ion-icon{
+            color:#189BE6 ;
+            font-size: 45px;
         }
     }
-    ion-icon{
-        padding: 1rem;
-        font-size: 2rem;
-        border-radius: 1.5rem;
-        color: red;
-        background-color: red;
-    }
-
-    
 }
 
-#eachCategory :active {
-
-    background-color: #eb9a3a;
-    ion-icon{
-        padding: 1rem;
-        font-size: 2rem;
-        border-radius: 1.5rem;
-        color: #eb9a3a;
-        background-color: #F6C731;
-    }
+.progress-ring__circle{
+    stroke: #189BE6;
 }
 
+#eachCategory {
+    ion-card{
+        ion-card-title{
+            font-size: 18px;
+        }
 
-    #today{              
-        background-color: #eb9a3a;
+        ion-card-content{
+            ion-card-title{
+                padding-top: 5px;
+            }
+
+            ion-card-subtitle{
+                color: black;
+            }
+        }
+        
         ion-icon{
             padding: 1rem;
             font-size: 2rem;
             border-radius: 1.5rem;
-            color: #eb9a3a;
-            background-color: #F6C731;
-        }
+            color: #189BE6;
+            background-color: #EEF2F5;
+        }  
+        
+    }
+}
+
+
+#eachCategory :active {
+    background-color: #189BE6;
+
+    ion-icon{
+        padding: 1rem;
+        font-size: 2rem;
+        border-radius: 1.5rem;
+        color: #189BE6;
+        background-color: #EEF2F5;
     }
 
-.progress-ring__circle{
-    stroke: blue;
+    ion-card-content{
+        ion-card-subtitle{
+            color: #EEF2F5;
+        }
+    }
 }
+
+#today{  
+    background-color: #189BE6;
+    ion-card-title{
+        font-size: 18px;
+    }
+
+    ion-card-content{
+        ion-card-title{
+            padding-top: 5px;
+        }
+        ion-card-subtitle{
+            color: #EEF2F5;
+        }
+    }
+    
+    ion-icon{
+        padding: 1rem;
+        font-size: 2rem;
+        border-radius: 1.5rem;
+        color: #189BE6;
+        background-color: #EEF2F5;
+    }  
+    
+    
+}
+
+#taskList{
+    ion-card{
+        margin-top: 0;
+    }
+
+    ion-item-sliding{
+        ion-item{
+            background-color: white;
+            padding: 15px 0 15px 0;
+        }
+    }
+}
+

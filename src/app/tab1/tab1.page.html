@@ -1,12 +1,10 @@
-<ion-header class="ion-no-border" [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Welcome (user) (date)
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content [fullscreen]="true">
+
+  <ion-title>
+    Welcome Redd
+  </ion-title>
+
   <!--Gamification-->
   <div id="gamificationBox"> 
     <ion-card>
@@ -14,23 +12,33 @@
         <ion-grid>
           <ion-row>
             <ion-col>
+              <!--Streak-->
               <ion-row>
-                <ion-col>
-                  <h5>Streak</h5>
-                  <h2>10 Days</h2>
+                <ion-col size="5">
+                  <ion-icon name="calendar-outline"></ion-icon>
+                </ion-col>
+                <ion-col size="7">
+                  <ion-row>Streak</ion-row>
+                  <ion-row>10 Days</ion-row>
                 </ion-col>
               </ion-row>
-    
+
+              <!--Tasks-->
               <ion-row>
-                <ion-col>
-                  <h5>Tasks Done</h5>
-                  <h2>2 Tasks</h2>
+                <ion-col size="5">
+                  <ion-icon name="checkbox-outline"></ion-icon>
+                </ion-col>
+
+                <ion-col size="7">
+                  <ion-row>Done</ion-row>
+                  <ion-row>6</ion-row>
                 </ion-col>
               </ion-row>
             </ion-col>
 
+
+            <!--circle-->
             <ion-col>
-              circle
                 <svg
                 class="progress-ring"
                 width="120"
@@ -49,21 +57,21 @@
 
           <ion-row>
             <ion-col>
-              <h5>Day</h5>
-              <ion-progress-bar value="0.5"></ion-progress-bar>
-              <h5>Day</h5>
+              <h5 style="font-size:17px">Day</h5>
+              <ion-progress-bar value="0.3"></ion-progress-bar>
+              <h5>2 Done</h5>
             </ion-col>
 
             <ion-col>
-              <h5>Day</h5>
+              <h5 style="font-size:17px">Week</h5>
               <ion-progress-bar value="0.5"></ion-progress-bar>
-              <h5>Day</h5>
+              <h5>4 Done</h5>
             </ion-col>
 
             <ion-col>
-              <h5>Day</h5>
-              <ion-progress-bar value="0.5"></ion-progress-bar>
-              <h5>Day</h5>
+              <h5 style="font-size:17px">Month</h5>
+              <ion-progress-bar value="0.7"></ion-progress-bar>
+              <h5>6 Done</h5>
             </ion-col>
 
           </ion-row>
@@ -77,12 +85,12 @@
   </div>
 
   <!--categories-->
-  <ion-slides pager="true" [options]="slideOpts">
+  <ion-slides id="categories" pager="false" [options]="slideOpts">
     <!--Today-->
     <ion-slide>
         <ion-card id="today">
           <ion-card-header>
-            <ion-icon name=""></ion-icon>
+            <ion-icon name="today"></ion-icon>
           </ion-card-header>
 
           <ion-card-content>
@@ -102,7 +110,7 @@
 
         <ion-card-content>
           <ion-card-title>{{category.name}}</ion-card-title>
-          <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+          <ion-card-subtitle>{{currentTasks.length}}/10 completed</ion-card-subtitle>
         </ion-card-content>
       </ion-card>
 
@@ -111,13 +119,12 @@
 
 
   <!--Task List-->
-  <!--School-->
   <div id="taskList">
     <ion-card>
       <ion-card-content>
         <ion-list>
           <ion-item-sliding *ngFor="let currentTask of currentTasks; let currentIndex = index">         
-            <ion-item>
+            <ion-item lines="none" color="null">
               <ion-checkbox [(ngModel)]="currentTask.complete" (ionChange)="updateCheckbox(currentTask)"></ion-checkbox>
               <ion-label>{{currentTask.name}}</ion-label>
               <h4>{{currentTask.endDate | date:'dd MMM YYYY, HH:mm' }}</h4>

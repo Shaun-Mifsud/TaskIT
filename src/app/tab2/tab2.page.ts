@@ -20,7 +20,7 @@ export class Tab2Page {
   moment: any = moment;
 
   slideOpts = {
-    slidesPerView: 3,
+    slidesPerView: 2.5,
     coverflowEffect: {
       rotate: 50,
       stretch: 0,
@@ -40,6 +40,8 @@ export class Tab2Page {
   slideNumber: number = 0;
 
   categoryIndex:number = -1;
+
+  totalComplete:number =0;
 
   //calendar
   date: string;
@@ -76,6 +78,21 @@ export class Tab2Page {
     const chosenDate = new Date($event.format('DD-MMMM-YYYY')).getTime();    
     const list = this.taskService.getAllTasks(chosenDate);
     this.currentTasks=list;
+  }
+
+  totalTasksComplete()
+  {
+    this.totalComplete=0;    
+    console.log(this.currentTasks);      
+    console.log("categories length "+this.categories.length); 
+
+    for (let i = 0; i < this.currentTasks.length; i++) {
+
+      if(this.currentTasks[i].complete== true)
+      {
+        this.totalComplete +=1;  
+      }  
+    }
   }
 
 }

@@ -41,6 +41,8 @@ export class Tab1Page {
 
   totalComplete:number =0;
 
+  showtasks:number=0;
+
   
   constructor(
     private storageService: StorageService,
@@ -53,9 +55,10 @@ export class Tab1Page {
     this.totalTasksComplete();
   }
 
+
   chooseCategory(index:number){
-    this.categoryIndex = index;
-    this.getTasks(index);
+      this.categoryIndex = index;
+      this.getTasks(index);
   }
 
   getTasks(index:number){
@@ -88,7 +91,6 @@ export class Tab1Page {
         this.totalComplete +=1;  
       }  
     }
-
   }
 
   delete(currentIndex:number){
