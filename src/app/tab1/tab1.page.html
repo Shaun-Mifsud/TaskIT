@@ -127,7 +127,7 @@
             <ion-item lines="none" color="null">
               <ion-checkbox [(ngModel)]="currentTask.complete" (ionChange)="updateCheckbox(currentTask)"></ion-checkbox>
               <ion-label>{{currentTask.name}}</ion-label>
-              <h4>{{currentTask.endDate | date:'dd MMM YYYY, HH:mm' }}</h4>
+              <h4>{{currentTask.endDate | date:'dd MMM YYYY' }} {{currentTask.endTime | date:'HH:mm' :'GMT'}}</h4>
             </ion-item>
         
             <ion-item-options side="end">
