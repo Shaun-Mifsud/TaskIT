@@ -55,7 +55,7 @@
     <ion-card>
       <ion-card-content>
         <ion-list *ngIf="currentTasks.length > 0">
-          <ion-item-sliding *ngFor="let currentTask of currentTasks">         
+          <ion-item-sliding *ngFor="let currentTask of currentTasks; let currentIndex = index">         
             <ion-item lines="none" color="null">
               <ion-checkbox [(ngModel)]="currentTask.complete" (ionChange)="updateCheckbox(currentTask)"></ion-checkbox>
               <ion-label>{{currentTask.name}}</ion-label>
@@ -69,6 +69,7 @@
         </ion-list>
 
         <p *ngIf="currentTasks.length == 0">No tasks in this category</p>
+
       </ion-card-content>
     </ion-card>
 

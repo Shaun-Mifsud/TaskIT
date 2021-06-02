@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 
 // Import the plugins from Capacitor and use only Storage.
-import { Storage } from '@capacitor/storage';
+import { Plugins } from '@capacitor/core';
+const { Storage } = Plugins;
 
 @Injectable({
   providedIn: 'root'

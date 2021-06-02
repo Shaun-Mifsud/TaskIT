@@ -98,8 +98,7 @@ export class Tab2Page {
       }  
     }
   }
-  
-  
+    
   delete(currentIndex:number){
     this.taskService.delete(this.categoryIndex,currentIndex);
   }
