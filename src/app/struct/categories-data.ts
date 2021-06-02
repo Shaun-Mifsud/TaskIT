@@ -3,25 +3,25 @@ import { Category } from "./list";
 
 export const CATEGORY: Category[] = [
     {
-        name: "home",
+        name: "Home",
         icon: "home",
         tasks: []
     },
 
     {
-        name: "school",
+        name: "School",
         icon: "school",
         tasks: []
     },
 
     {
-        name: "workout",
+        name: "Workout",
         icon: "fitness",
         tasks: []
     },
 
     {
-        name: "work",
+        name: "Work",
         icon: "briefcase",
         tasks: []
     }

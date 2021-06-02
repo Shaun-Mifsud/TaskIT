@@ -59,6 +59,10 @@ export class Tab2Page {
     //console.log(this.categories);
   }
 
+  today(index:number){
+    this.categoryIndex = index;
+}
+
   chooseCategory(index:number){
     this.categoryIndex = index;
     //console.log(this.categories[this.categoryIndex]);
@@ -94,5 +98,11 @@ export class Tab2Page {
       }  
     }
   }
+  
+  
+  delete(currentIndex:number){
+    this.taskService.delete(this.categoryIndex,currentIndex);
+  }
+
 
 }

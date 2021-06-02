@@ -61,8 +61,7 @@ ion-card{
     }
 }
 
-
-#eachCategory :active {
+#eachCategory .focus {
     background-color: #189BE6;
 
     ion-icon{
@@ -81,7 +80,7 @@ ion-card{
 }
 
 #today{  
-    background-color: #189BE6;
+
     ion-card-title{
         font-size: 18px;
     }
@@ -91,7 +90,7 @@ ion-card{
             padding-top: 5px;
         }
         ion-card-subtitle{
-            color: #EEF2F5;
+            color: black;
         }
     }
     
@@ -101,10 +100,20 @@ ion-card{
         border-radius: 1.5rem;
         color: #189BE6;
         background-color: #EEF2F5;
-    }  
+    }     
     
-    
+    &.focus {
+        color: #EEF2F5;
+        background-color: #189BE6;
+
+        ion-card-content{
+            ion-card-subtitle{
+                color: #EEF2F5;
+            }
+        }
+    }
 }
+
 
 #taskList{
     ion-card{

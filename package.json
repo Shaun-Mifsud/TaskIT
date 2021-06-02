@@ -21,6 +21,7 @@
     "@angular/router": "~11.2.0",
     "@capacitor/angular": "^1.0.3",
     "@capacitor/core": "latest",
+    "@capacitor/storage": "^1.0.0",
     "@ionic/angular": "^5.5.2",
     "@mdi/angular-material": "^5.9.55",
     "ion2-calendar": "^3.0.0-rc.0",

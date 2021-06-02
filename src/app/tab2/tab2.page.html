@@ -18,19 +18,19 @@
 
     <!--categories-->
   <ion-slides id="categories" pager="false" [options]="slideOpts">
-      <!--Today-->
-      <ion-slide>
-          <ion-card id="today">
-            <ion-card-header>
-              <ion-icon name="today"></ion-icon>
-            </ion-card-header>
+    <!--Today-->
+    <ion-slide>
+      <ion-card id="today" (click)="today(-1)"  [ngClass]="{ 'focus': categoryIndex == -1}">
+        <ion-card-header>
+          <ion-icon name="today"></ion-icon>
+        </ion-card-header>
 
-            <ion-card-content>
-              <ion-card-title>Today</ion-card-title>
-              <ion-card-subtitle>5/10 completed</ion-card-subtitle>
-            </ion-card-content>
-          </ion-card>               
-        </ion-slide>
+        <ion-card-content>
+          <ion-card-title>Today</ion-card-title>
+          <ion-card-subtitle>5/10 completed</ion-card-subtitle>
+        </ion-card-content>
+      </ion-card>               
+    </ion-slide>
   
         <!--categories-->
       <ion-slide id="eachCategory" *ngFor="let category of categories; let i = index">      
@@ -54,7 +54,7 @@
   <div id="taskList">
     <ion-card>
       <ion-card-content>
-        <ion-list>
+        <ion-list *ngIf="currentTasks.length > 0">
           <ion-item-sliding *ngFor="let currentTask of currentTasks">         
             <ion-item lines="none" color="null">
               <ion-checkbox [(ngModel)]="currentTask.complete" (ionChange)="updateCheckbox(currentTask)"></ion-checkbox>
@@ -63,13 +63,15 @@
             </ion-item>
         
             <ion-item-options side="end">
-              <ion-item-option (click)="unread(item)">Delete</ion-item-option>
+              <ion-item-option (click)="delete(currentIndex)">Delete</ion-item-option>
             </ion-item-options>
           </ion-item-sliding>
         </ion-list>
 
+        <p *ngIf="currentTasks.length == 0">No tasks in this category</p>
       </ion-card-content>
     </ion-card>
+
   </div>
 
   <!--Gamification-->

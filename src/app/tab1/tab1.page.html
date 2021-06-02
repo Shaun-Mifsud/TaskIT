@@ -88,7 +88,7 @@
   <ion-slides id="categories" pager="false" [options]="slideOpts">
     <!--Today-->
     <ion-slide>
-        <ion-card id="today">
+        <ion-card id="today" (click)="today(-1)"  [ngClass]="{ 'focus': categoryIndex == -1}">
           <ion-card-header>
             <ion-icon name="today"></ion-icon>
           </ion-card-header>
@@ -122,7 +122,7 @@
   <div id="taskList">
     <ion-card>
       <ion-card-content>
-        <ion-list>
+        <ion-list *ngIf="currentTasks.length > 0">
           <ion-item-sliding *ngFor="let currentTask of currentTasks; let currentIndex = index">         
             <ion-item lines="none" color="null">
               <ion-checkbox [(ngModel)]="currentTask.complete" (ionChange)="updateCheckbox(currentTask)"></ion-checkbox>
@@ -135,6 +135,8 @@
             </ion-item-options>
           </ion-item-sliding>
         </ion-list>
+
+        <p *ngIf="currentTasks.length == 0">No tasks in this category</p>
 
       </ion-card-content>
     </ion-card>

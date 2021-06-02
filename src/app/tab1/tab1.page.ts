@@ -55,6 +55,9 @@ export class Tab1Page {
     this.totalTasksComplete();
   }
 
+  today(index:number){
+    this.categoryIndex = index;
+}
 
   chooseCategory(index:number){
       this.categoryIndex = index;

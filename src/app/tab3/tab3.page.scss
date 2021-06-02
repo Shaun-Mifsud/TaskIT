@@ -29,6 +29,17 @@ ion-button {
 }
 
 #taskInputArea{
+    h2{
+        margin-top: 45px;
+        margin-bottom:32px;
+    }
+
+    #saveButton{
+        ion-button{
+            margin-top: 160px;
+        }
+    }
+
     margin-top: 0px;
     width: 100%;
 
@@ -46,6 +57,7 @@ ion-slides{
 }
 
 #eachCategory {
+
     ion-card{
         margin: 6px;
         ion-card-title{
